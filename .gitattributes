@@ -1,0 +1,6 @@
+Module[[:space:]]Five filter=lfs diff=lfs merge=lfs -text
+Module[[:space:]]Four filter=lfs diff=lfs merge=lfs -text
+Module[[:space:]]Three filter=lfs diff=lfs merge=lfs -text
+Module[[:space:]]Five/** filter=lfs diff=lfs merge=lfs -text
+Module[[:space:]]Four/** filter=lfs diff=lfs merge=lfs -text
+Module[[:space:]]Three/** filter=lfs diff=lfs merge=lfs -text
