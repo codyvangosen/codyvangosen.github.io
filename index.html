@@ -5,82 +5,174 @@
   <title>Cody VanGosen | CS-499 Capstone Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 40px;
-      color: #333;
-      max-width: 900px;
-      margin: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
+      color: #222;
+      line-height: 1.6;
     }
-    h1, h2 {
+
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #005792;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffe066;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      animation: fadeUp 0.5s ease-in-out;
+    }
+
+    h2 {
       color: #003366;
       border-bottom: 2px solid #ccc;
-      padding-bottom: 4px;
+      padding-bottom: 5px;
     }
+
     a {
-      color: #007acc;
+      color: #005792;
       text-decoration: none;
+      font-weight: 500;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .section {
-      margin-bottom: 50px;
+
+    iframe {
+      max-width: 100%;
+      border: none;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #003366;
+      color: white;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Cody VanGosen - CS-499 ePortfolio</h1>
-  <p>This portfolio serves as the culmination of my Bachelor of Science in Computer Science at Southern New Hampshire University. It highlights enhanced artifacts that demonstrate my proficiency in software design, algorithm development, and database integration. Accompanying narratives and a professional self-assessment provide insight into my learning journey, technical skills, and future career aspirations.</p>
+  <header>
+    <h1>Cody VanGosen - CS-499 ePortfolio</h1>
+    <p>Showcasing growth through enhancement, reflection, and applied computer science</p>
+  </header>
 
-  <div class="section">
-    <h2>🧭 Professional Self-Assessment</h2>
-    <p>This formal self-assessment provides a comprehensive overview of my personal and academic growth throughout the computer science program. It emphasizes my technical strengths, career goals, and ability to work collaboratively in diverse environments. It serves as an introduction to the portfolio and demonstrates how I connect the coursework to professional development goals.</p>
-    <a href="7-1_FinalProject/Professional_Self_Assessment.docx">Download Professional Self-Assessment</a>
+  <nav>
+    <a href="#self-assessment">Self-Assessment</a>
+    <a href="#code-review">Code Review</a>
+    <a href="#enhancement1">Enhancement 1</a>
+    <a href="#enhancement2">Enhancement 2</a>
+    <a href="#enhancement3">Enhancement 3</a>
+    <a href="#journals">Journals</a>
+  </nav>
+
+  <div class="container">
+
+    <div id="self-assessment" class="section">
+      <h2>🧭 Professional Self-Assessment</h2>
+      <p>This formal self-assessment provides a comprehensive overview of my personal and academic growth throughout the computer science program. It emphasizes my technical strengths, career goals, and ability to work collaboratively in diverse environments. It serves as an introduction to the portfolio and demonstrates how I connect the coursework to professional development goals.</p>
+      <a href="7-1_FinalProject/Professional_Self_Assessment.docx">Download Professional Self-Assessment</a>
+    </div>
+
+    <div id="code-review" class="section">
+      <h2>🧪 Code Review</h2>
+      <p>My code review provides a detailed walkthrough of the original artifact before enhancement. It includes analysis of core functionality, structure, and opportunities for improvement in performance, organization, and documentation. The accompanying video outlines the rationale behind each enhancement plan, directly tied to course outcomes and industry-relevant practices.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-e9XPso4syg" title="Code Review Video" allowfullscreen></iframe>
+      <br><br>
+      <a href="Module Two/Code Review Script.docx">Download Code Review Script</a>
+    </div>
+
+    <div id="enhancement1" class="section">
+      <h2>🔧 Enhancement 1: Software Design and Engineering</h2>
+      <p>This enhancement demonstrates significant improvements to a C++ OpenGL-based 3D rendering application originally developed for CS-330. The goal was to restructure the rendering logic for better readability, scalability, and modularity while preserving the intended visual fidelity. I introduced data abstraction using C++ structs, reduced redundancy with loop-based drawing, and implemented a scene graph using custom SceneNode classes. These improvements enable future extensibility for additional objects and features, while also aligning with clean code practices and OOP principles.</p>
+      <a href="Module Three/SDE Milestone Two.zip">Download Original Artifact</a><br>
+      <a href="Module Four/7-1_FinalProjectMilestones (4).zip">Download Enhanced Artifact</a><br>
+      <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
+    </div>
+
+    <div id="enhancement2" class="section">
+      <h2>📊 Enhancement 2: Algorithms and Data Structures</h2>
+      <p>This enhancement focuses on advanced algorithmic problem-solving and data structure optimization, applied to the same OpenGL rendering artifact. Specifically, I implemented recursive scene traversal through a hierarchical SceneNode tree and used spatial reasoning to dynamically manage the transformations of furniture and food objects. I also improved lighting realism through a physically based rendering technique known as percentage closer filtering (PCF). These algorithmic strategies supported efficient rendering of dynamic components while maintaining runtime performance.</p>
+      <a href="Module Three/Initial_Render.png">View Original Render</a><br>
+      <a href="Module Four/Pre_Render.png">View Enhanced Render</a><br>
+      <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
+    </div>
+
+    <div id="enhancement3" class="section">
+      <h2>🗃️ Enhancement 3: Databases</h2>
+      <p>This enhancement focuses on integrating persistent data storage into a classic OpenGL-based brick breaker game originally developed in CS-330. The core improvement was the implementation of a high score system using a JSON file to manage player records, paired with dynamic UI prompts for user interaction. The program now records initials and scores after a game session, with real-time display updates for top performers. This enhancement demonstrates my ability to serialize and manage structured data outside of a traditional RDBMS, showcasing skills in file-based database simulation, interactive data I/O, and user-driven state transitions.</p>
+      <a href="Module Five/Initial_Code.zip">Download Initial Code</a><br>
+      <a href="Module Five/8-2_Assignment.zip">Download Enhanced Code</a><br>
+      <a href="Module Five/Milestone Four Narrative.docx">Read Narrative</a>
+    </div>
+
+    <div id="journals" class="section">
+      <h2>📓 Journals & Supporting Work</h2>
+      <p>Each weekly journal entry in this portfolio tracks my technical progress, personal reflections, and adaptation to instructor feedback. These entries not only document the enhancement process, but also connect specific techniques to broader program outcomes. They demonstrate growth in planning, iterative improvement, and problem-solving under evolving requirements.</p>
+      <a href="Journals/Module Two Journal.docx">Module Two Journal</a><br>
+      <a href="Journals/Module Three Journal.docx">Module Three Journal</a><br>
+      <a href="Journals/Module Four Journal.docx">Module Four Journal</a><br>
+      <a href="Journals/Module Five Journal.docx">Module Five Journal</a>
+    </div>
+
   </div>
 
-  <div class="section">
-    <h2>🧪 Code Review</h2>
-    <p>My code review provides a detailed walkthrough of the original artifact before enhancement. It includes analysis of core functionality, structure, and opportunities for improvement in performance, organization, and documentation. The accompanying video outlines the rationale behind each enhancement plan, directly tied to course outcomes and industry-relevant practices.</p>
-    <a href="https://youtu.be/-e9XPso4syg" target="_blank">Watch Code Review Video</a><br>
-    <a href="Module Two/Code Review Script.docx">Download Code Review Script</a>
-  </div>
-
-  <div class="section">
-    <h2>🔧 Enhancement 1: Software Design and Engineering</h2>
-    <p>This enhancement demonstrates significant improvements to a C++ OpenGL-based 3D rendering application originally developed for CS-330. The goal was to restructure the rendering logic for better readability, scalability, and modularity while preserving the intended visual fidelity. I introduced data abstraction using C++ structs, reduced redundancy with loop-based drawing, and implemented a scene graph using custom SceneNode classes. These improvements enable future extensibility for additional objects and features, while also aligning with clean code practices and OOP principles. According to my Milestone Two Narrative, these changes helped satisfy course outcomes related to software design and collaborative maintainability, and directly improved the efficiency of future enhancements.</p>
-    <a href="Module Three/SDE Milestone Two.zip">Download Original Artifact</a><br>
-    <a href="Module Four/7-1_FinalProjectMilestones (4).zip">Download Enhanced Artifact</a><br>
-    <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
-  </div>
-
-  <div class="section">
-    <h2>📊 Enhancement 2: Algorithms and Data Structures</h2>
-    <p>My second enhancement focuses on advanced algorithmic problem-solving and data structure optimization, applied to the same OpenGL rendering artifact. Specifically, I implemented recursive scene traversal through a hierarchical SceneNode tree and used spatial reasoning to dynamically manage the transformations of furniture and food objects. I also improved lighting realism through a physically based rendering technique known as percentage closer filtering (PCF). These algorithmic strategies supported efficient rendering of dynamic components while maintaining runtime performance. This milestone reflects mastery of recursive algorithms, transformation stack logic, and trade-off management, as emphasized in my Enhancement Two journal and narrative.</p>
-    <a href="Module Three/Initial_Render.png">View Original Render</a><br>
-    <a href="Module Four/Pre_Render.png">View Enhanced Render</a><br>
-    <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
-  </div>
-
-  <div class="section">
-    <h2>🗃️ Enhancement 3: Databases</h2>
-    <p>This enhancement focuses on integrating persistent data storage into a classic OpenGL-based brick breaker game originally developed in CS-330. The core improvement was the implementation of a high score system using a JSON file to manage player records, paired with dynamic UI prompts for user interaction. The program now records initials and scores after a game session, with real-time display updates for top performers. This enhancement demonstrates my ability to serialize and manage structured data outside of a traditional RDBMS, showcasing skills in file-based database simulation, interactive data I/O, and user-driven state transitions. According to my Milestone Four Narrative and Journal, this solution exemplifies practical application of database logic using lightweight formats, while ensuring performance, cross-platform compatibility, and user experience enhancements—all without the need for a server-based backend.</p>
-    <a href="Module Five/Initial_Code.zip">Download Initial Code</a><br>
-    <a href="Module Five/8-2_Assignment.zip">Download Enhanced Code</a><br>
-    <a href="Module Five/Milestone Four Narrative.docx">Read Narrative</a>
-  </div>
-
-  <div class="section">
-    <h2>📓 Journals & Supporting Work</h2>
-    <p>Each weekly journal entry in this portfolio tracks my technical progress, personal reflections, and adaptation to instructor feedback. These entries not only document the enhancement process, but also connect specific techniques (e.g., modular scene design, PCF lighting, or MongoDB integration) to larger program outcomes. My journals also chronicle the challenges I faced—such as managing shader bugs or implementing secure callback logic—and how I resolved them. They demonstrate growth in project planning, iterative development, and cross-discipline knowledge transfer across all phases of the capstone project.</p>
-    <a href="Journals/Module Two Journal.docx">Module Two Journal</a><br>
-    <a href="Journals/Module Three Journal.docx">Module Three Journal</a><br>
-    <a href="Journals/Module Four Journal.docx">Module Four Journal</a><br>
-    <a href="Journals/Module Five Journal.docx">Module Five Journal</a>
-  </div>
-
-  <p><strong>Last Updated:</strong> April 13, 2025</p>
+  <footer>
+    <p>Last Updated: April 13, 2025 | Cody VanGosen</p>
+  </footer>
 
 </body>
 </html>
