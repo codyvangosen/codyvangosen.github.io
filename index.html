@@ -3,18 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Cody VanGosen | CS-499 Capstone Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --bg: #f0f4f8;
+      --card: #ffffff;
+      --text: #222;
+      --nav: #005792;
+      --accent: #ffe066;
+      --highlight: #003366;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --card: #1f1f1f;
+      --text: #e0e0e0;
+      --nav: #222a45;
+      --accent: #ffd700;
+      --highlight: #7aa2f7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      background-image: linear-gradient(to right top, #dfe9f3, #ffffff);
+      transition: background 0.4s, color 0.4s;
     }
 
     header {
-      background: #003366;
-      color: #fff;
+      background: var(--highlight);
+      color: white;
       padding: 40px 20px;
       text-align: center;
       animation: fadeIn 1s ease-in;
@@ -26,25 +52,42 @@
     }
 
     nav {
-      background-color: #005792;
+      background-color: var(--nav);
       display: flex;
       justify-content: center;
       padding: 10px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 10px 15px;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffe066;
+      color: var(--accent);
+    }
+
+    .toggle-theme {
+      margin-left: auto;
+      background-color: var(--accent);
+      color: var(--highlight);
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-theme:hover {
+      background-color: #fff2aa;
     }
 
     .container {
@@ -54,22 +97,23 @@
     }
 
     .section {
-      background: #ffffff;
+      background: var(--card);
       border-radius: 10px;
       padding: 30px;
       margin-bottom: 40px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       animation: fadeUp 0.5s ease-in-out;
+      transition: background 0.3s ease;
     }
 
     h2 {
-      color: #003366;
+      color: var(--highlight);
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
     }
 
     a {
-      color: #005792;
+      color: var(--nav);
       text-decoration: none;
       font-weight: 500;
     }
@@ -88,8 +132,13 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #003366;
+      background-color: var(--highlight);
       color: white;
+    }
+
+    .github-widget {
+      text-align: center;
+      margin-top: 20px;
     }
 
     @keyframes fadeUp {
@@ -103,7 +152,7 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
 
   <header>
     <h1>Cody VanGosen - CS-499 ePortfolio</h1>
@@ -111,68 +160,64 @@
   </header>
 
   <nav>
-    <a href="#self-assessment">Self-Assessment</a>
-    <a href="#code-review">Code Review</a>
-    <a href="#enhancement1">Enhancement 1</a>
-    <a href="#enhancement2">Enhancement 2</a>
-    <a href="#enhancement3">Enhancement 3</a>
-    <a href="#journals">Journals</a>
+    <a href="#self-assessment">🧭 Self-Assessment</a>
+    <a href="#code-review">🧪 Code Review</a>
+    <a href="#enhancement1">🔧 Enhancement 1</a>
+    <a href="#enhancement2">📊 Enhancement 2</a>
+    <a href="#enhancement3">🗃️ Enhancement 3</a>
+    <a href="#journals">📓 Journals</a>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
   </nav>
 
   <div class="container">
-
     <div id="self-assessment" class="section">
       <h2>🧭 Professional Self-Assessment</h2>
-      <p>This formal self-assessment provides a comprehensive overview of my personal and academic growth throughout the computer science program. It emphasizes my technical strengths, career goals, and ability to work collaboratively in diverse environments. It serves as an introduction to the portfolio and demonstrates how I connect the coursework to professional development goals.</p>
-      <a href="7-1_FinalProject/Professional_Self_Assessment.docx">Download Professional Self-Assessment</a>
+      <p>[...]</p>
     </div>
 
     <div id="code-review" class="section">
       <h2>🧪 Code Review</h2>
-      <p>My code review provides a detailed walkthrough of the original artifact before enhancement. It includes analysis of core functionality, structure, and opportunities for improvement in performance, organization, and documentation. The accompanying video outlines the rationale behind each enhancement plan, directly tied to course outcomes and industry-relevant practices.</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-e9XPso4syg" title="Code Review Video" allowfullscreen></iframe>
-      <br><br>
-      <a href="Module Two/Code Review Script.docx">Download Code Review Script</a>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-e9XPso4syg" allowfullscreen></iframe>
     </div>
 
     <div id="enhancement1" class="section">
-      <h2>🔧 Enhancement 1: Software Design and Engineering</h2>
-      <p>This enhancement demonstrates significant improvements to a C++ OpenGL-based 3D rendering application originally developed for CS-330. The goal was to restructure the rendering logic for better readability, scalability, and modularity while preserving the intended visual fidelity. I introduced data abstraction using C++ structs, reduced redundancy with loop-based drawing, and implemented a scene graph using custom SceneNode classes. These improvements enable future extensibility for additional objects and features, while also aligning with clean code practices and OOP principles.</p>
-      <a href="Module Three/SDE Milestone Two.zip">Download Original Artifact</a><br>
-      <a href="Module Four/7-1_FinalProjectMilestones (4).zip">Download Enhanced Artifact</a><br>
-      <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
+      <h2>🔧 Enhancement 1: Software Design</h2>
+      <p>[...]</p>
     </div>
 
     <div id="enhancement2" class="section">
-      <h2>📊 Enhancement 2: Algorithms and Data Structures</h2>
-      <p>This enhancement focuses on advanced algorithmic problem-solving and data structure optimization, applied to the same OpenGL rendering artifact. Specifically, I implemented recursive scene traversal through a hierarchical SceneNode tree and used spatial reasoning to dynamically manage the transformations of furniture and food objects. I also improved lighting realism through a physically based rendering technique known as percentage closer filtering (PCF). These algorithmic strategies supported efficient rendering of dynamic components while maintaining runtime performance.</p>
-      <a href="Module Three/Initial_Render.png">View Original Render</a><br>
-      <a href="Module Four/Pre_Render.png">View Enhanced Render</a><br>
-      <a href="Module Four/Milestone Three Narrative.docx">Read Narrative</a>
+      <h2>📊 Enhancement 2: Algorithms</h2>
+      <p>[...]</p>
     </div>
 
     <div id="enhancement3" class="section">
       <h2>🗃️ Enhancement 3: Databases</h2>
-      <p>This enhancement focuses on integrating persistent data storage into a classic OpenGL-based brick breaker game originally developed in CS-330. The core improvement was the implementation of a high score system using a JSON file to manage player records, paired with dynamic UI prompts for user interaction. The program now records initials and scores after a game session, with real-time display updates for top performers. This enhancement demonstrates my ability to serialize and manage structured data outside of a traditional RDBMS, showcasing skills in file-based database simulation, interactive data I/O, and user-driven state transitions.</p>
-      <a href="Module Five/Initial_Code.zip">Download Initial Code</a><br>
-      <a href="Module Five/8-2_Assignment.zip">Download Enhanced Code</a><br>
-      <a href="Module Five/Milestone Four Narrative.docx">Read Narrative</a>
+      <p>[...]</p>
     </div>
 
     <div id="journals" class="section">
       <h2>📓 Journals & Supporting Work</h2>
-      <p>Each weekly journal entry in this portfolio tracks my technical progress, personal reflections, and adaptation to instructor feedback. These entries not only document the enhancement process, but also connect specific techniques to broader program outcomes. They demonstrate growth in planning, iterative improvement, and problem-solving under evolving requirements.</p>
-      <a href="Journals/Module Two Journal.docx">Module Two Journal</a><br>
-      <a href="Journals/Module Three Journal.docx">Module Three Journal</a><br>
-      <a href="Journals/Module Four Journal.docx">Module Four Journal</a><br>
-      <a href="Journals/Module Five Journal.docx">Module Five Journal</a>
+      <p>[...]</p>
     </div>
 
+    <div class="github-widget">
+      <h2>💻 GitHub Activity</h2>
+      <iframe src="https://ghbtns.com/github-btn.html?user=codyvangosen&type=follow&count=true" frameborder="0" scrolling="0" width="220" height="20" title="GitHub Follow"></iframe>
+      <br><br>
+      <iframe src="https://ghchart.rshah.org/003366/codyvangosen" frameborder="0" scrolling="0" width="100%" height="200" title="GitHub Chart"></iframe>
+    </div>
   </div>
 
   <footer>
     <p>Last Updated: April 13, 2025 | Cody VanGosen</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
 
 </body>
 </html>
