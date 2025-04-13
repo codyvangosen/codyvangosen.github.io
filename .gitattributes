@@ -7,4 +7,3 @@
 "Module Seven/**" filter=lfs diff=lfs merge=lfs -text
 "Journals/**" filter=lfs diff=lfs merge=lfs -text
 csportfolio.css filter=lfs diff=lfs merge=lfs -text
-Journals/** filter=lfs diff=lfs merge=lfs -text
