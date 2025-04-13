@@ -1,87 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cody VanGosen | Computer Science ePortfolio</title>
+  <meta charset="UTF-8">
+  <title>Cody VanGosen | CS-499 Capstone Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --bg: #f0f4f8;
+      --card: #ffffff;
+      --text: #222;
+      --nav: #005792;
+      --accent: #ffe066;
+      --highlight: #003366;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --card: #1f1f1f;
+      --text: #e0e0e0;
+      --nav: #222a45;
+      --accent: #ffd700;
+      --highlight: #7aa2f7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 40px;
-      max-width: 960px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      background-image: linear-gradient(to right top, #dfe9f3, #ffffff);
+      transition: background 0.4s, color 0.4s;
     }
-    h1, h2, h3 {
-      color: #2a2a2a;
+
+    header {
+      background: var(--highlight);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: var(--nav);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
     nav a {
-      margin-right: 15px;
+      color: white;
       text-decoration: none;
-      color: #007acc;
+      margin: 10px 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
-    section {
-      margin-bottom: 60px;
+
+    nav a:hover {
+      color: var(--accent);
     }
+
+    .toggle-theme {
+      margin-left: auto;
+      background-color: var(--accent);
+      color: var(--highlight);
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-theme:hover {
+      background-color: #fff2aa;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      animation: fadeUp 0.5s ease-in-out;
+      transition: background 0.3s ease;
+    }
+
+    h2 {
+      color: var(--highlight);
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    a {
+      color: var(--nav);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     iframe {
-      width: 100%;
-      max-width: 720px;
-      height: 405px;
-    }
-    .artifact-link {
-      display: inline-block;
+      max-width: 100%;
+      border: none;
       margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--highlight);
+      color: white;
+    }
+
+    .github-widget, .github-embed {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .github-embed iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
 
-  <h1>Cody VanGosen | Computer Science ePortfolio</h1>
-  <p>Welcome to my professional ePortfolio showcasing enhanced projects and skills gained throughout my journey at Southern New Hampshire University.</p>
+  <header>
+    <h1><i class="fas fa-laptop-code"></i> Cody VanGosen - CS-499 ePortfolio</h1>
+    <p>Showcasing growth through enhancement, reflection, and applied computer science</p>
+  </header>
 
   <nav>
-    <a href="#self-assessment">Self-Assessment</a>
-    <a href="#code-review">Code Review</a>
-    <a href="#artifact1">Software Design</a>
-    <a href="#artifact2">Algorithms</a>
-    <a href="#artifact3">Databases</a>
+    <a href="#self-assessment"><i class="fas fa-compass"></i> Self-Assessment</a>
+    <a href="#code-review"><i class="fas fa-vial"></i> Code Review</a>
+    <a href="#enhancement1"><i class="fas fa-tools"></i> Enhancement 1</a>
+    <a href="#enhancement2"><i class="fas fa-brain"></i> Enhancement 2</a>
+    <a href="#enhancement3"><i class="fas fa-database"></i> Enhancement 3</a>
+    <a href="#journals"><i class="fas fa-book"></i> Journals</a>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
   </nav>
 
-  <section id="self-assessment">
-    <h2>Professional Self-Assessment</h2>
-    <p><a href="Journals/Professional_Self_Assessment.docx" class="artifact-link">Download Self-Assessment (DOCX)</a></p>
-  </section>
+  <div class="container">
+    <div id="self-assessment" class="section">
+  <h2><i class="fas fa-compass"></i> Professional Self-Assessment</h2>
+  <p>This self-assessment provides a reflective overview of my growth throughout the Computer Science program at Southern New Hampshire University. It highlights key accomplishments, technical skills, and collaborative experiences that shaped my development. I discuss how the capstone course and earlier coursework helped me strengthen areas such as software architecture, algorithm design, database handling, and secure development practices. Additionally, I connect these achievements to my career goals and professional values as I prepare to transition into industry roles requiring analytical problem-solving, system optimization, and effective communication.</p>
+</div>
 
-  <section id="code-review">
-    <h2>Code Review Video</h2>
-    <p>My informal code review outlines the functionality and proposed enhancements of the selected artifacts. The video walkthrough highlights technical decisions and connections to course outcomes.</p>
-    <iframe src="https://www.youtube.com/embed/-e9XPso4syg" title="Code Review Video" frameborder="0" allowfullscreen></iframe>
-  </section>
+    <div id="code-review" class="section">
+  <h2><i class="fas fa-vial"></i> Code Review</h2>
+  <p>This video walkthrough provides an initial review of the artifact prior to enhancement, identifying areas for architectural, algorithmic, and usability improvements. I assess issues such as redundant rendering logic, rigid data structures, and limited modularity, and propose enhancements to improve maintainability and performance. The review also outlines how each proposed improvement maps to CS-499 course outcomes. Through this process, I demonstrate my ability to conduct technical analysis and communicate development strategy clearly to both peers and stakeholders.</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-e9XPso4syg" allowfullscreen></iframe>
+</div>
 
-  <section id="artifact1">
-    <h2>Enhancement One: Software Design and Engineering</h2>
-    <p><strong>Artifact:</strong> [Project Title Here]</p>
-    <p><strong>Original Files:</strong> <a href="Module One/" class="artifact-link">View Module One</a></p>
-    <p><strong>Enhanced Files:</strong> <a href="Module Three/" class="artifact-link">View Module Three</a></p>
-    <p><strong>Narrative:</strong> <a href="Journals/Enhancement_One.docx" class="artifact-link">Download Narrative</a></p>
-  </section>
+    <div id="enhancement1" class="section">
+  <h2><i class="fas fa-tools"></i> Enhancement 1: Software Design</h2>
+  <p>This enhancement improved the structure and maintainability of a C++ OpenGL-based 3D rendering system. The original artifact lacked modularity, making future updates difficult. To address this, I refactored the codebase using structured data types, introduced a scene graph with hierarchical node organization, and centralized transformation logic for reuse. These changes aligned with software engineering principles by increasing scalability, improving object abstraction, and enhancing rendering performance. The updates directly support program outcomes related to clean design, refactoring, and implementation of industry-aligned coding standards.</p>
+  <ul>
+    <li><strong>Initial Code:</strong> <a href="Module Three/7-1_FinalProjectMilestones.zip">7-1_FinalProjectMilestones.zip</a></li>
+    <li><strong>Final Code:</strong> <a href="Module Three/SDE Milestone Two.zip">SDE Milestone Two.zip</a></li>
+    <li><strong>Narrative:</strong> <a href="Module Three/Milestone Two Narrative.docx">Milestone Two Narrative.docx</a></li>
+  </ul>
+</div>
 
-  <section id="artifact2">
-    <h2>Enhancement Two: Algorithms and Data Structures</h2>
-    <p><strong>Artifact:</strong> [Project Title Here]</p>
-    <p><strong>Original Files:</strong> <a href="Module One/" class="artifact-link">View Module One</a></p>
-    <p><strong>Enhanced Files:</strong> <a href="Module Four/" class="artifact-link">View Module Four</a></p>
-    <p><strong>Narrative:</strong> <a href="Journals/Enhancement_Two.docx" class="artifact-link">Download Narrative</a></p>
-  </section>
+    <div id="enhancement2" class="section">
+  <h2><i class="fas fa-brain"></i> Enhancement 2: Algorithms</h2>
+  <p>This enhancement focused on algorithmic optimization and data structure refinement in the 3D rendering project. I implemented recursive traversal of a custom scene graph and used matrix transformations to manage object states dynamically. Additional logic was introduced to enable physically based lighting techniques such as percentage closer filtering (PCF). The new algorithms enhanced scene realism, reduced rendering redundancy, and improved overall computational efficiency. This milestone showcases mastery of recursive algorithms, performance tuning, and complex spatial logic to meet evolving project requirements.</p>
+  <ul>
+    <li><strong>Initial Code:</strong> <a href="Module Four/SDE Milestone Two.zip">SDE Milestone Two.zip</a></li>
+    <li><strong>Final Code:</strong> <a href="Module Four/Enhancement Two Algorithms and Data Structure">Enhancement Two Algorithms and Data Structures (2).zip</a></li>
+    <li><strong>Narrative:</strong> <a href="Module Four/Milestone Three Narrative.docx">Milestone Three Narrative.docx</a></li>
+  </ul>
+</div>
 
-  <section id="artifact3">
-    <h2>Enhancement Three: Databases</h2>
-    <p><strong>Artifact:</strong> [Project Title Here]</p>
-    <p><strong>Original Files:</strong> <a href="Module Two/" class="artifact-link">View Module Two</a></p>
-    <p><strong>Enhanced Files:</strong> <a href="Module Five/" class="artifact-link">View Module Five</a></p>
-    <p><strong>Narrative:</strong> <a href="Journals/Enhancement_Three.docx" class="artifact-link">Download Narrative</a></p>
-  </section>
+    <div id="enhancement3" class="section">
+  <h2><i class="fas fa-database"></i> Enhancement 3: Databases</h2>
+  <p>In this enhancement, I integrated JSON-based data persistence into an OpenGL-based brick breaker game. Originally, the game lacked any form of state saving. I implemented functionality that prompts users for initials upon game completion, stores scores in a JSON file, and retrieves and displays high scores on subsequent playthroughs. This demonstrates effective file-based database handling and user I/O management without requiring a traditional RDBMS. The project fulfills database-related outcomes through structured data processing, persistence strategies, and user interaction features tailored to performance-aware environments.</p>
+  <ul>
+    <li><strong>Initial Code:</strong> <a href="Module Five/Initial_Code.zip">Initial_Code.zip</a></li>
+    <li><strong>Final Code:</strong> <a href="Module Five/8-2_Assignment.zip">8-2_Assignment.zip</a></li>
+    <li><strong>Narrative:</strong> <a href="Module Five/Milestone Four Narrative.docx">Milestone Four Narrative.docx</a></li>
+  </ul>
+</div>
+
+    <div id="journals" class="section">
+  <h2><i class="fas fa-book"></i> Journals & Supporting Work</h2>
+  <p>Each journal entry documents the weekly progress, challenges, and learning outcomes throughout the CS-499 capstone. These reflections highlight how I implemented feedback, overcame technical issues such as shader inconsistencies and callback timing, and aligned my enhancements with course objectives. The journals also provide evidence of professional growth through problem-solving, self-guided research, and adaptation to evolving project demands. They serve as a narrative of my development and reinforce the depth of my engagement across software design, algorithm theory, and data systems.</p>
+</div>
+
+    <div class="github-widget">
+      <h2><i class="fab fa-github"></i> GitHub Activity</h2>
+      <iframe src="https://ghbtns.com/github-btn.html?user=codyvangosen&type=follow&count=true" width="220" height="20" title="GitHub Follow"></iframe>
+      <br><br>
+      <iframe src="https://ghchart.rshah.org/003366/codyvangosen" width="100%" height="200" title="GitHub Chart"></iframe>
+    </div>
+
+    <div class="github-embed">
+  <h2><i class="fas fa-folder-open"></i> GitHub Profile Preview</h2>
+  <p>Unable to display live preview due to browser security limitations. Please <a href="https://github.com/codyvangosen" target="_blank">click here to view my GitHub profile</a> in a new tab.</p>
+</div>
+  </div>
+
+  <footer>
+    <p>Last Updated: April 13, 2025 | Cody VanGosen</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
 
 </body>
 </html>
