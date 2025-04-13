@@ -139,6 +139,10 @@
         .github-widget, .github-embed {
             text-align: center;
             margin-top: 20px;
+            background: var(--card);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
             .github-embed iframe {
@@ -146,6 +150,27 @@
                 height: 500px;
                 border: none;
             }
+
+        .download-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+            .download-links a {
+                background: var(--accent);
+                color: var(--highlight);
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+                .download-links a:hover {
+                    background: #ffe98c;
+                }
 
         @keyframes fadeUp {
             from {
@@ -171,7 +196,6 @@
     </style>
 </head>
 <body data-theme="light">
-
     <header>
         <h1><i class="fas fa-laptop-code"></i> Cody VanGosen - CS-499 ePortfolio</h1>
         <p>Showcasing growth through enhancement, reflection, and applied computer science</p>
@@ -201,12 +225,12 @@
 
         <div id="enhancement1" class="section">
             <h2><i class="fas fa-tools"></i> Enhancement 1: Software Design</h2>
-            <p>This enhancement improved the structure and maintainability of a C++ OpenGL-based 3D rendering system. The original artifact lacked modularity, making future updates difficult. To address this, I refactored the codebase using structured data types, introduced a scene graph with hierarchical node organization, and centralized transformation logic for reuse. These changes aligned with software engineering principles by increasing scalability, improving object abstraction, and enhancing rendering performance. The updates directly support program outcomes related to clean design, refactoring, and implementation of industry-aligned coding standards.</p>
-            <ul>
-                <li><strong>Initial Code:</strong> <a href="Module Three/7-1_FinalProjectMilestones.zip">7-1_FinalProjectMilestones.zip</a></li>
-                <li><strong>Final Code:</strong> <a href="Module Three/SDE Milestone Two.zip">SDE Milestone Two.zip</a></li>
-                <li><strong>Narrative:</strong> <a href="Module Three/Milestone Two Narrative.docx">Milestone Two Narrative.docx</a></li>
-            </ul>
+            <p>This enhancement improved the structure and maintainability of a C++ OpenGL-based 3D rendering system. The original artifact lacked modularity, making future updates difficult. To address this, I refactored the codebase using structured data types, introduced a scene graph with hierarchical node organization, and centralized transformation logic for reuse. These changes aligned with software engineering principles by increasing scalability, improving object abstraction, and enhancing rendering performance.</p>
+            <div class="download-links">
+                <a href="Module Three/7-1_FinalProjectMilestones.zip">Initial Code</a>
+                <a href="Module Three/SDE Milestone Two.zip">Final Code</a>
+                <a href="Module Three/Milestone Two Narrative.docx">Narrative</a>
+            </div>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
                 <img src="Module Three/Initial_Render.png" alt="Initial Render Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <img src="Module Three/Final_Render.png" alt="Final Render Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -215,12 +239,12 @@
 
         <div id="enhancement2" class="section">
             <h2><i class="fas fa-brain"></i> Enhancement 2: Algorithms</h2>
-            <p>This enhancement focused on algorithmic optimization and data structure refinement in the 3D rendering project. I implemented recursive traversal of a custom scene graph and used matrix transformations to manage object states dynamically. Additional logic was introduced to enable physically based lighting techniques such as percentage closer filtering (PCF). The new algorithms enhanced scene realism, reduced rendering redundancy, and improved overall computational efficiency. This milestone showcases mastery of recursive algorithms, performance tuning, and complex spatial logic to meet evolving project requirements.</p>
-            <ul>
-                <li><strong>Initial Code:</strong> <a href="Module Four/SDE Milestone Two.zip">SDE Milestone Two.zip</a></li>
-                <li><strong>Final Code:</strong> <a href="Module Four/Enhancement Two Algorithms and Data Structure.zip">Enhancement Two Algorithms and Data Structure.zip</a></li>
-                <li><strong>Narrative:</strong> <a href="Module Four/Milestone Three Narrative.docx">Milestone Three Narrative.docx</a></li>
-            </ul>
+            <p>This enhancement focused on algorithmic optimization and data structure refinement in the 3D rendering project. I implemented recursive traversal of a custom scene graph and used matrix transformations to manage object states dynamically. Additional logic was introduced to enable physically based lighting techniques such as percentage closer filtering (PCF). The new algorithms enhanced scene realism, reduced rendering redundancy, and improved overall computational efficiency.</p>
+            <div class="download-links">
+                <a href="Module Four/SDE Milestone Two.zip">Initial Code</a>
+                <a href="Module Four/Enhancement Two Algorithms and Data Structure.zip">Final Code</a>
+                <a href="Module Four/Milestone Three Narrative.docx">Narrative</a>
+            </div>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
                 <img src="Module Four/Enhancement_One.png" alt="Initial Render Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <img src="Module Four/Pre_Render.png" alt="Final Render Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -229,12 +253,12 @@
 
         <div id="enhancement3" class="section">
             <h2><i class="fas fa-database"></i> Enhancement 3: Databases</h2>
-            <p>In this enhancement, I integrated JSON-based data persistence into an OpenGL-based brick breaker game. Originally, the game lacked any form of state saving. I implemented functionality that prompts users for initials upon game completion, stores scores in a JSON file, and retrieves and displays high scores on subsequent playthroughs. This demonstrates effective file-based database handling and user I/O management without requiring a traditional RDBMS. The project fulfills database-related outcomes through structured data processing, persistence strategies, and user interaction features tailored to performance-aware environments.</p>
-            <ul>
-                <li><strong>Initial Code:</strong> <a href="Module Five/Initial_Code.zip">Initial_Code.zip</a></li>
-                <li><strong>Final Code:</strong> <a href="Module Five/8-2_Assignment.zip">8-2_Assignment.zip</a></li>
-                <li><strong>Narrative:</strong> <a href="Module Five/Milestone Four Narrative.docx">Milestone Four Narrative.docx</a></li>
-            </ul>
+            <p>In this enhancement, I integrated JSON-based data persistence into an OpenGL-based brick breaker game. Originally, the game lacked any form of state saving. I implemented functionality that prompts users for initials upon game completion, stores scores in a JSON file, and retrieves and displays high scores on subsequent playthroughs. This demonstrates effective file-based database handling and user I/O management without requiring a traditional RDBMS.</p>
+            <div class="download-links">
+                <a href="Module Five/Initial_Code.zip">Initial Code</a>
+                <a href="Module Five/8-2_Assignment.zip">Final Code</a>
+                <a href="Module Five/Milestone Four Narrative.docx">Narrative</a>
+            </div>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
                 <img src="Module Five/Final_Breakout.png" alt="Final Breakout Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <img src="Module Five/Initial_Breakout.png" alt="Initial Breakout Screenshot" style="max-width: 48%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -244,6 +268,16 @@
         <div id="journals" class="section">
             <h2><i class="fas fa-book"></i> Journals & Supporting Work</h2>
             <p>Each journal entry documents the weekly progress, challenges, and learning outcomes throughout the CS-499 capstone. These reflections highlight how I implemented feedback, overcame technical issues such as shader inconsistencies and callback timing, and aligned my enhancements with course objectives. The journals also provide evidence of professional growth through problem-solving, self-guided research, and adaptation to evolving project demands. They serve as a narrative of my development and reinforce the depth of my engagement across software design, algorithm theory, and data systems.</p>
+            <div class="download-links">
+                <a href="Module One/Journal_1.docx">Journal 1</a>
+                <a href="Module Two/Journal_2.docx">Journal 2</a>
+                <a href="Module Three/Journal_3.docx">Journal 3</a>
+                <a href="Module Four/Journal_4.docx">Journal 4</a>
+                <a href="Module Five/Journal_5.docx">Journal 5</a>
+                <a href="Module Six/Journal_6.docx">Journal 6</a>
+                <a href="Module Seven/Journal_7.docx">Journal 7</a>
+                <a href="Module Eight/Journal_8.docx">Journal 8</a>
+            </div>
         </div>
 
         <div class="github-widget">
@@ -269,6 +303,5 @@
             document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
         }
     </script>
-
 </body>
 </html>
