@@ -1,9 +1,10 @@
-Module[[:space:]]Five filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Four filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Three filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Five/** filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Four/** filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Three/** filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Six/** filter=lfs diff=lfs merge=lfs -text
-Module[[:space:]]Seven/** filter=lfs diff=lfs merge=lfs -text
+"Module One/**" filter=lfs diff=lfs merge=lfs -text
+"Module Two/**" filter=lfs diff=lfs merge=lfs -text
+"Module Three/**" filter=lfs diff=lfs merge=lfs -text
+"Module Four/**" filter=lfs diff=lfs merge=lfs -text
+"Module Five/**" filter=lfs diff=lfs merge=lfs -text
+"Module Six/**" filter=lfs diff=lfs merge=lfs -text
+"Module Seven/**" filter=lfs diff=lfs merge=lfs -text
+"Journals/**" filter=lfs diff=lfs merge=lfs -text
 csportfolio.css filter=lfs diff=lfs merge=lfs -text
+Journals/** filter=lfs diff=lfs merge=lfs -text
